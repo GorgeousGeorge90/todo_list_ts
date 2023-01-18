@@ -1,0 +1,16 @@
+@import 'src/assets/styles/default_values';
+
+header {
+  height:$header;
+  background-color: $header_color;
+  width: $width;
+
+  h3 {
+    color:$h2_color;
+  }
+
+  p {
+    color:$p_color;
+  }
+
+}

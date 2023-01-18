@@ -1,0 +1,7 @@
+@import 'src/assets/styles/default_values';
+
+.container {
+  width: $width;
+  height: 100vh;
+  background-color: $main_color;
+}
