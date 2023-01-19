@@ -1,10 +1,10 @@
 import BaseForm from './BaseForm';
-import {useAppDispatch} from "../../redux/redux-hooks";
-import {addTodo} from "../../redux/todoSlice";
+import {useAppDispatch} from "../../../redux/redux-hooks";
+import {addTodo} from "../../../redux/todoSlice";
 
 
 
-const NewTodoFrom = () => {
+const NewTodoForm = () => {
     const dispatch = useAppDispatch()
 
     const createTodo = (text:string)=> {
@@ -17,4 +17,4 @@ const NewTodoFrom = () => {
 
 }
 
-export default NewTodoFrom
+export default NewTodoForm

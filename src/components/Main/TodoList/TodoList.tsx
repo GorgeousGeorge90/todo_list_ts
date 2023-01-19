@@ -1,9 +1,10 @@
 import {useSelector} from 'react-redux';
-import {getList} from "../../selectors/todoSelectors";
+import {getList} from "../../../selectors/todoSelectors";
 import TodoItem from './TodoItem/TodoItem';
-import {useAppDispatch} from "../../redux/redux-hooks";
-import {completeTodo, deleteTodo} from "../../redux/todoSlice";
-import {Todos} from "../../types/types";
+import {useAppDispatch} from "../../../redux/redux-hooks";
+import {completeTodo, deleteTodo} from "../../../redux/todoSlice";
+import {Todos} from "../../../types/types";
+import styles from './TodoList.module.scss'
 
 const TodoList = ()=> {
     const list = useSelector(getList)
@@ -17,8 +18,10 @@ const TodoList = ()=> {
         dispatch(completeTodo(id))
     }
 
+
     return (
-        <ul>
+        <div className={styles.container}>
+            <ul>
             {
                 list.map(todo => {
                     return <TodoItem
@@ -31,7 +34,8 @@ const TodoList = ()=> {
                     />
                 })
             }
-        </ul>
+            </ul>
+        </div>
     )
 }
 

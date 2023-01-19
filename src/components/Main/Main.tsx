@@ -1,5 +1,5 @@
-import NewTodoFrom from '../TodoForm/NewTodoFrom';
-import TodoList from '../TodoList/TodoList';
+import NewTodoForm from './TodoForm/NewTodoForm';
+import TodoList from './TodoList/TodoList';
 import React from 'react';
 import styles from './Main.module.scss'
 
@@ -7,7 +7,7 @@ import styles from './Main.module.scss'
 const Main = ()=> {
     return (
         <div className={styles.container}>
-            <NewTodoFrom/>
+            <NewTodoForm/>
             <TodoList/>
         </div>
     )
