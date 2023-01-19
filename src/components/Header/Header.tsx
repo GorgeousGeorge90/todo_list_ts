@@ -1,4 +1,5 @@
 import styles from './Header.module.scss'
+import logo from './../../../src/assets/img/logo.png'
 
 
 const Header = () => {
@@ -6,7 +7,7 @@ const Header = () => {
         <header>
             <div className={styles.container}>
                 <div className={styles.logo}>
-                    <img/>
+                    <img src={logo}/>
                 </div>
                 <div className={styles.content}>
                     <h3>Todo manager</h3>

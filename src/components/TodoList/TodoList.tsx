@@ -1,9 +1,8 @@
-import ITodoItem from './TodoItem/TodoItem';
-import {useSelector} from "react-redux";
+import {useSelector} from 'react-redux';
 import {getList} from "../../selectors/todoSelectors";
 import TodoItem from './TodoItem/TodoItem';
 import {useAppDispatch} from "../../redux/redux-hooks";
-import {deleteTodo} from "../../redux/todoSlice";
+import {completeTodo, deleteTodo} from "../../redux/todoSlice";
 import {Todos} from "../../types/types";
 
 const TodoList = ()=> {
@@ -14,11 +13,22 @@ const TodoList = ()=> {
         dispatch(deleteTodo(id))
     }
 
+    const completeTask = (id:Todos['id'])=> {
+        dispatch(completeTodo(id))
+    }
+
     return (
         <ul>
             {
                 list.map(todo => {
-                    return <TodoItem key={todo.id} id={todo.id} text={todo.text} deleteTodo={deleteTask}/>
+                    return <TodoItem
+                        complete={todo.complete}
+                        key={todo.id}
+                        id={todo.id}
+                        text={todo.text}
+                        deleteTodo={deleteTask}
+                        completeTodo={completeTask}
+                    />
                 })
             }
         </ul>

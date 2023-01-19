@@ -1,4 +1,5 @@
 import React, {useRef} from 'react';
+import styles from './BaseForm.module.scss'
 
 
 
@@ -19,14 +20,14 @@ const BaseForm = ({handleSubmit, placeholder}:TodoFormProps) => {
     }
 
     return (
-        <>
+        <div className={styles.container}>
             <input
                 type="text"
                 placeholder={placeholder}
                 ref={newRef}
             />
             <button onClick={onClick}>New task</button>
-        </>
+        </div>
     )
 }
 

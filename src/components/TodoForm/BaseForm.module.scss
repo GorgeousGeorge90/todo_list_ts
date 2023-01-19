@@ -1,0 +1,15 @@
+@import "src/assets/styles/default_values";
+
+.container {
+  display: flex;
+  margin-top:20px;
+
+  input {
+    width:$form_w;
+    height:$form_h;
+  }
+
+  button {
+    height: 26px;
+  }
+}

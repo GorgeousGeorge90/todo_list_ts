@@ -4,13 +4,43 @@ header {
   height:$header;
   background-color: $header_color;
   width: $width;
+  display: flex;
+  align-items: center;
+  font-family: "Apple Chancery";
 
-  h3 {
-    color:$h2_color;
+  .container {
+    display: grid;
+    grid-template-columns: 50px 1fr 4fr 50px;
+    align-items: center;
+    gap: 20px;
+    width: $width;
+
+    .logo {
+      grid-column: 2/3;
+
+      img {
+        height: 100px;
+      }
+    }
+
+    .content {
+      grid-column: 3/4;
+      padding-left: 50px;
+
+      h3, p {
+        margin: 0;
+      }
+
+      h3 {
+        color: $h2_color;
+        font-size: 1.5em;
+        font-family: 'Anton';
+      }
+
+      p {
+        color: $p_color;
+        font-size: 1.2em;
+      }
+    }
   }
-
-  p {
-    color:$p_color;
-  }
-
 }

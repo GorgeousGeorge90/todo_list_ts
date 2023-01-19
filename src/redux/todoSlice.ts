@@ -3,14 +3,18 @@ import {Todos} from '../types/types';
 
 
 export type TodoSlice = {
-    status: boolean,
+    text: string,
     list: Todos[],
 }
 
+const getBaseList = () => {
+    const data = localStorage.getItem('todos')
+    return data ? JSON.parse(data): []
+}
 
 const initialState:TodoSlice = {
-    status: false,
-    list: [],
+    text: '',
+    list: getBaseList(),
 }
 
 const todoSlice = createSlice({
@@ -35,14 +39,6 @@ const todoSlice = createSlice({
         },
         deleteTodo: (state, action:PayloadAction<Todos['id']>)=> {
             state.list = state.list.filter(todo => todo.id !== action.payload)
-        },
-        changeTodo: (state,action:PayloadAction<Omit<Todos, 'complete'>>)=> {
-            const todo = state.list.find(el => el.id === action.payload.id)
-            state.status = !state.status
-
-            if (todo) {
-                todo.text = action.payload.text
-            }
         }
     }
 })
@@ -53,5 +49,4 @@ export const {
     addTodo,
     deleteTodo,
     completeTodo,
-    changeTodo,
 } = todoSlice.actions
