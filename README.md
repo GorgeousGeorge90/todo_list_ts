@@ -18,5 +18,5 @@ Also has localStorage to save the data.
 ### Contacts
 
 For feedback:`Gambit47@yandex.ru`<br>
-Deployed:https://gorgeousgeorge90.github.io/burning_man/
+Deployed:https://gorgeousgeorge90.github.io/todo_list_ts/
 
